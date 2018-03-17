@@ -1,22 +1,17 @@
-//San Diego - 10/03/2018 - 21:26.
-//Classe Conjunto, representar u conjunto como uma classe Java.
-
 public class Conjunto{
 
-	private int indice;
-	private int tamanho;
-	private int[] elementos;
+	int indice;
+	Object[] elementos;
 
 	//Construtor da Classe Conjunto
 	public Conjunto(int tamanho){
 
-		this.tamanho = tamanho;
-		elementos = new int[tamanho];
+		elementos = new Object[tamanho];
 		indice = 0;
 	}
 
 	//Construtor de tamanho padrão.
-	public Conjunto(){
+	public Conjunto() {
 
 		this(10);
 	}
@@ -25,33 +20,68 @@ public class Conjunto{
 	public void setElement(int n){
 
 		//Verifica se existe espaço no conjunto e se nῶao tem elementos repetidos para inserir.
-		if (!checkExistence(n) && indice < tamanho){
+		if (!checkExistence(n) && indice < elementos.length){
 
 			elementos[indice] = n;
 			indice++;
 		}
 	}
 
-	//Retorna um valor específico
-	public int getElement(int i){
-		if (i > 0 && i < indice) {
-			return elementos[i]; 
+	public void setElement(float n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
 		}
 	}
 
-	//Função resposável por verificar a existência de um conjunto;
-	public boolean checkExistence(int n){
+	public void setElement(String n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+	}
+
+	public void setElement(double n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+	}
+
+	public void setElement(Object n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+
+	}
+
+	public boolean checkExistence(Object n) {
 		//Verifica a existencia um elemento no Conjunto.
 		for (int i = 0; i < indice; i++) {
 				
 			if (n == getElement(i))
 				return true;
 		}
-
 		return false;
 	}
 
-	//Função responsável por verificar se um conjunto é subconjunto de outro.
+	public Object getElement(int i){
+
+		if (i > 0 && i < indice) 
+			return elementos[i];
+		else
+			return null;
+	}
+
 	public boolean checkSubset(Conjunto C){
 		//Verifica se para cada inteiro do primeiro conjunto o mesmo elemento
 		//pertence ao segundo conjunto e rretorna um valor correspondente.
@@ -59,16 +89,14 @@ public class Conjunto{
 
 		for (int i = 0; i < indice; i++) {
 
-			if (!C.checkExistence(getElement(i))){
+			if (!C.checkExistence(getElement(i)))
 				return false;
-			}
 		}
 
 		return true;
 	}
 
-	//Função responsável pela união de dois conjuntos.
-	public Conjunto union(Conjunto C){
+	public Conjunto union(Conjunto C) {
 
 		int aux = 0;
 
@@ -98,7 +126,7 @@ public class Conjunto{
 	public Conjunto inter(Conjunto C){
 		//Inicializa um vetor que guardará os valores comuns aos conjuntos.
 		//e uma variável que auxilia na contagem e armazenagem do tamanho dos conjuntos.
-		int[] NRepetidos = new int[C.indice];
+		Object[] NRepetidos = new Object[C.indice];
 		int aux = 0;
 
 		//Verifica quantos e quais os elementos comuns aos conjuntos.
@@ -114,7 +142,7 @@ public class Conjunto{
 		Conjunto ConjInter = new Conjunto(aux);
 
 		//Preenche o ConjInter com os valores comuns aos dois conjunntos.
-		for (int i = 0; i < ConjInter.tamanho; i++) {
+		for (int i = 0; i < ConjInter.elementos.length; i++) {
 
 			ConjInter.setElement(NRepetidos[i]);
 		}
@@ -131,19 +159,18 @@ public class Conjunto{
 		Conjunto ConjInter = inter(C);
 
 		//Instância do Conjunto diferença.
-		Conjunto ConjDif = new Conjunto(tamanho - ConjInter.tamanho);
+		Conjunto ConjDif = new Conjunto(elementos.length - ConjInter.elementos.length);
 
 		//Verifica se para cada elemento do conjunto atual está no conjunto intersecção.
 		for (int i = 0; i < indice; i++) {
-			for (int j = 0; j < ConjInter.tamanho; j++) {
+			for (int j = 0; j < ConjInter.elementos.length; j++) {
 			
 
-				if (elementos[i] == ConjInter.getElement(j)) {
-
+				if (elementos[i] == ConjInter.getElement(j))
 					aux = false;
 
 				}
-			}
+			
 
 			//Insere no conjunto da diferença aqueles elementos que não estão no conjunto da intersecção.
 			if (aux) {
@@ -155,4 +182,13 @@ public class Conjunto{
 
 		return ConjDif;
 	}
+
+	public void showSet() {
+
+		for(int i = 0; i<elementos.length; i++) {
+
+			System.out.println(elementos[i]);
+		}
+	}
+
 }
