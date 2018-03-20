@@ -141,6 +141,11 @@ public class FunPrinc {
 		Teste1.setElement(4);
 		Teste2.setElement(5);
 		Teste2.setElement(6);
+
+
+		Conjunto Teste3 = Teste1.produtoCartesiano(Teste2);
+
+		Teste3.showSet();
 		
 	}
 	

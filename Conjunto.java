@@ -189,20 +189,21 @@ public class Conjunto{ //classe conjunto
 
 		int n = (this.elementos.length * C2.elementos.length);	//Número de pares ordenados do produto cartesiano.
 
-		Conjunto Produto = new Conjunto(n);	// Instanciaçao do conjunto que receberá os pares ordenados.
+		Conjunto produto = new Conjunto(n);	// Instanciaçao do conjunto que receberá os pares ordenados.
 
-		Conjunto Aux = new Conjunto(2);	//Conjunto para armazenar os valores temporarios de cada par ordenado.
+		Conjunto par = new Conjunto(2);	//Conjunto para armazenar os valores temporarios de cada par ordenado.
 
 		for(int i = 0; i < indice; i++) {	//Conjunto 1
 			for(int j = 0; j < C2.indice; j++) {	//COnjunto 2
 
-				Aux.elementos[0] = this.getElement(i);
-				Aux.elementos[1] = C2.getElement(j);
+				par.elementos[0] = this.getElement(i);
+				par.elementos[1] = C2.getElement(j);
 
-				Produto.setElement(Aux.elementos);
+			    produto.setElement(par.elementos[i]);
 			}
+			
 		}
-		return Produto;
+		return produto;
 	}
 
 	public void showSet() {
@@ -213,12 +214,11 @@ public class Conjunto{ //classe conjunto
 		}
 	}
 
-	/*public void showSet(Conjunto Produto) {
+	public void showSet(Conjunto produto) {
 
-		for(int i = 0; i < Produto.indice; i++) {
-
-				System.out.println("("+(Produto.elementos[i]).elementos[0]+","+(Produto.elementos[i]).elementos[1]+")");
-			}
-	}*/
+		Object a = produto.getElement(0);
+	
+		System.out.println(a);
+	}
 
 }
