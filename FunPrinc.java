@@ -1,4 +1,4 @@
-//San Diego - 10/03/2018 - 21:26.
+//San Diego - 20/03/2018 - 18:40.
 //Função principal - testes da classe Conjunto.
 
 public class FunPrinc{
@@ -131,5 +131,62 @@ public class FunPrinc{
 			System.out.println(ConDif.elementos[i]);
 		}
 
+		//----------- Testando a Lei de De Morgan -----------
+
+		//Passo 01 - Guardar o valor de Complementar A U B:
+
+		Conjunto CUniverso = new Conjunto(50);
+
+		//Preechendo o Conjunto universo com os primeiros 50 inteiros;
+		for (int i = 0; i < 50; i++) {
+			CUniverso.setElement(i);
+		}
+
+		Conjunto A = new Conjunto(11);
+
+		//Preenchendo o Conjunto A com os 11 primeiros valores multiplos de 3.
+		for (int j = 0; j < 33; j += 3) {
+			A.setElement(j);
+		}
+
+		Conjunto B = new Conjunto(7);
+
+		//Preenchendo o Conjunto B com os 7 primeiros valores multiplos de 4.
+		for (int k = 0; k < 28; k += 4) {
+			B.setElement(k);
+		}
+
+		//Conjunto A U B;
+		Conjunto CUnionAB = A.union(B);
+
+		//Criando o Conjunto complementar de A U B;
+		Conjunto CCompUnionAB = CUniverso.dif(CUnionAB);
+
+		//Passo 02 - Guardar o valor de Complementar A U Complementar B:
+
+		//Conjunto Complementar de A.
+		Conjunto CCompA = CUniverso.dif(A);
+
+		//Conjunto Complementar de B.
+		Conjunto CCompB = CUniverso.dif(B);
+
+		//Conjunto União dos Complementares de A e B.
+		Conjunto CUnionCompAB = CCompA.inter(CCompB);
+
+
+		//Passo 3 - Checar a igualdade dos dois conjuntos: CCompUnionAB e CUnionCompAB.
+
+		aux = false; //Reutilizando variável dos testes anteriores.
+
+		if (CUnionCompAB.checkSubset(CCompUnionAB) && CCompUnionAB.checkSubset(CUnionCompAB)){
+			aux = true;
+		}
+
+		if (aux) {
+			System.out.println("Lei de De Morgan vale.");
+
+		}else{
+			System.out.println("Lei de De Morgan NÃO vale.");
+		}
 	}
 }

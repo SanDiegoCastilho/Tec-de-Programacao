@@ -3,9 +3,9 @@
 
 public class Conjunto{
 
-	private int indice;
-	private int tamanho;
-	private int[] elementos;
+	int indice;
+	int tamanho;
+	int[] elementos;
 
 	//Construtor da Classe Conjunto
 	public Conjunto(int tamanho){
@@ -34,15 +34,17 @@ public class Conjunto{
 
 	//Retorna um valor específico
 	public int getElement(int i){
-		if (i > 0 && i < indice) {
+		if (i >= 0 && i < indice){
 			return elementos[i]; 
 		}
+
+		return 0;
 	}
 
 	//Função resposável por verificar a existência de um conjunto;
 	public boolean checkExistence(int n){
 		//Verifica a existencia um elemento no Conjunto.
-		for (int i = 0; i < indice; i++) {
+		for (int i = 0; i < indice; i++){
 				
 			if (n == getElement(i))
 				return true;
