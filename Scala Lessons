@@ -1,0 +1,7 @@
+Caros, segue o list para uma colinha de uso do protocolo git: http://files.zeroturnaround.com/pdf/zt_git_cheat_sheet.pdf
+
+Caros, segue o repositório com os notebooks das aulas de Scala: https://github.com/InsightLab/scala-cookbook
+
+Caros, como prometido eu fiz uns scripts para configuração do Scala Notebook para que vocês possam instalar em suas máquinas (tanto no lec quanto em casa). Os scripts estão em um repositório meu chamado useful-scripts (https://github.com/lucaspg96/useful-scripts), na pasta jupyter.
+Minha sugestão é executar os seguintes scripts para configurar e rodar o ambiente: setup-jupyter.sh, setup-scala-kernel.sh, run-notebook.sh.
+Caso ocorra algum problema, favor abrir uma ISSUE no repositório.
