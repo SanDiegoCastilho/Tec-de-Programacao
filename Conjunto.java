@@ -1,4 +1,4 @@
-public class Conjunto{
+public class Conjunto{ //classe conjunto
 
 	int indice;
 	Object[] elementos;
