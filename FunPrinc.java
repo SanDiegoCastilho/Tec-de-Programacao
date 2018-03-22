@@ -215,6 +215,19 @@ public class FunPrinc {
 		}else{
 			System.out.println("Lei de De Morgan NÃO vale.");
 		}
-	}
+
+
+
+
+			Conjunto lero = new Conjunto(3);
+
+			for(int i = 0; i < 3; i++) {
+				lero.setElement(i);			
 	
+			}
+
+
+			lero.printarPartes();
+
+	}
 }

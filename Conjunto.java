@@ -222,4 +222,43 @@ public class Conjunto{
 		}
 	}
 
+	public Conjunto partes() {
+		if (indice > 0) {
+			Conjunto CPartes = new Conjunto((int) Math.pow(2,indice));
+			CPartes.setElement(new Conjunto());
+
+			for (int i = 0; i < indice; i++) {
+				Conjunto CAux = new Conjunto(1);
+				CAux.setElement(this.elementos[i]);
+				partesAux(CAux, i, CPartes);
+			}
+			return CPartes;
+		}
+
+		return null;
+	}
+
+	private void partesAux(Conjunto C, int i, Conjunto P){
+		 	P.setElement(C);
+
+		for (int j = i + 1; j < indice; j++) {
+			Conjunto B = new Conjunto(1);
+			B.setElement(elementos[j]);
+			partesAux(C.union(B), j, P);
+		}
+	} 	
+
+	public void printarPartes () {
+		Conjunto CPartes = this.partes();
+
+		for (int i = 0; i < CPartes.indice; i++) {
+			Object elemento = CPartes.getElement(i);
+			if (elemento instanceof Integer) {
+				System.out.println(elemento);
+			} else {
+				((Conjunto)elemento).printarPartes();
+			}
+		}
+	}
+
 }
