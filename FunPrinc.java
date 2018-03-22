@@ -132,20 +132,29 @@ public class FunPrinc {
 
 		//Produto Cartesiano Teste1 x Teste2.
 
-		Conjunto Teste1 = new Conjunto(4);
-		Conjunto Teste2 = new Conjunto(2);
+		Conjunto teste1 = new Conjunto(4);
+		Conjunto teste2 = new Conjunto(2);
 
-		Teste1.setElement(1);
-		Teste1.setElement(2);
-		Teste1.setElement(3);
-		Teste1.setElement(4);
-		Teste2.setElement(5);
-		Teste2.setElement(6);
+		teste1.setElement(1);
+		teste1.setElement(2);
+		teste1.setElement("Bom dia!");
+		teste1.setElement(4);
+		teste2.setElement(5);
+		teste2.setElement(6);
 
 
-		Conjunto Teste3 = Teste1.produtoCartesiano(Teste2);
+		System.out.println("=========Teste do Produto Cartesiano==========");
 
-		Teste3.showSet();
+		Conjunto[] teste3 = new Conjunto[teste1.elementos.length*teste2.elementos.length];
+		teste3 = teste1.produtoCartesiano(teste2);
+
+		int contador = 0;
+
+		for(int i=0;i<8;i++) {
+
+			System.out.println("("+teste3[contador].getElement(0)+","+teste3[contador].getElement(1)+")");
+			contador++;
+		}
 		
 	}
 	
