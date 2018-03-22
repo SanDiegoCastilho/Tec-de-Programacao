@@ -70,12 +70,11 @@ public class Conjunto{
 			elementos[indice] = n;
 			indice++;
 		}
-
 	}
 
 	public boolean checkExistence(Object n) {
-		//Verifica a existencia um elemento no Conjunto.
 
+		//Verifica a existencia um elemento no Conjunto.
 		for (int i = 0; i < indice; i++) {
 				
 			if (n.equals(getElement(i)))
@@ -96,7 +95,6 @@ public class Conjunto{
 		//Verifica se para cada inteiro do primeiro conjunto o mesmo elemento
 		//pertence ao segundo conjunto e rretorna um valor correspondente.
 	
-
 		for (int i = 0; i < indice; i++) {
 
 			if (!C.checkExistence(getElement(i)))
