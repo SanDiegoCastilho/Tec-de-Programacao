@@ -1,3 +1,7 @@
+//Francisco San Diego de Sousa Castilho - Mtarícula: 397377 - Última modificação: 23/03/2018 15:30.
+//Todas as funções teve a participação dos membros: Francisco San Diego e Breno Araújo na sua eleboração.
+//A função de calculo do conjunto potência teve ajuda do Aluno Abner Lima.
+//A participação dos alunos San Diego e Breno Araújo variavam em Codificação e Baseamento teorico.  
 public class Conjunto{
 
 	int indice;
@@ -246,19 +250,25 @@ public class Conjunto{
 			B.setElement(elementos[j]);
 			partesAux(C.union(B), j, P);
 		}
-	} 	
-
-	public void printarPartes () {
-		Conjunto CPartes = this.partes();
-
-		for (int i = 0; i < CPartes.indice; i++) {
-			Object elemento = CPartes.getElement(i);
-			if (elemento instanceof Integer) {
-				System.out.println(elemento);
-			} else {
-				((Conjunto)elemento).printarPartes();
-			}
-		}
 	}
 
+
+	//Imprime o os elementos do conjunto das partes.
+	public void imprimir() {
+		Object[] Vetor = new Object[(int) Math.pow(2,indice)];
+
+		System.out.print("{ ");
+		for (int i = 0; i < this.indice; i++) {
+			Vetor[i] = this.getElement(i);
+
+			if (Vetor[i] instanceof Conjunto) {
+				Conjunto elemento = (Conjunto)Vetor[i];
+				elemento.imprimir();
+			} else {
+				System.out.print(Vetor[i] + ",");
+			}
+
+		}
+		System.out.println(" }");
+	}
 }

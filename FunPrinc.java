@@ -1,8 +1,10 @@
-//San Diego - 20/03/2018 - 18:40.
+//Francisco San Diego de Sousa Castilho  - Matrícula: 397377 - Última modificação: 23/03/2018 - 15:27.
+//Esse trabalho foi feito por mim e pelo aluno Breno Araújo com ajuda do Abner Lima.
 //Função principal - testes da classe Conjunto.
 public class FunPrinc {
 	public static void main(String[] args) {
 
+		//San Diego e Breno
 		Conjunto CInteiros = new Conjunto(10); //dez primeiros números naturais.
 		Conjunto CPares = new Conjunto(5); //cinco primeiros números pares.
 		Conjunto CImpares = new Conjunto(5); //cinco primeiros números ímpares.
@@ -14,10 +16,12 @@ public class FunPrinc {
 		}
 
 		//Imprimindo resultado.
-		System.out.println("--- Conjunto dos dez primeiros inteiros ---");
+		System.out.println("----- Conjunto dos dez primeiros inteiros -----");
 		for (int i = 0; i < CInteiros.indice; i++) {
-			System.out.println(CInteiros.elementos[i]);
+			System.out.print(CInteiros.getElement(i) + " ");
 		}
+		
+		System.out.println("\n");
 
 
 		//Preenchendo conjunto CPares.
@@ -28,10 +32,12 @@ public class FunPrinc {
 		}
 
 		//Imprimindo resultado.
-		System.out.println("--- Conjunto dos 5 primeiros inteiros pares ---");
+		System.out.println("----- Conjunto dos 5 primeiros inteiros pares -----");
 		for (int i = 0; i < CPares.indice; i++) {
-			System.out.println(CPares.elementos[i]);
+			System.out.print(CPares.getElement(i) + " ");
 		}
+
+		System.out.println("\n");
 
 
 		//Preenchendo conjunto CImpares.
@@ -42,11 +48,12 @@ public class FunPrinc {
 		}
 
 		//Imprimindo resultado.
-		System.out.println("--- Conjunto dos cinco primeiros inteiros ímpares ---");
+		System.out.println("----- Conjunto dos cinco primeiros inteiros ímpares -----");
 		for (int i = 0; i < CImpares.indice; i++) {
-			System.out.println(CImpares.elementos[i]);
+			System.out.print(CImpares.getElement(i) + " ");
 		}
 
+		System.out.println("\n");
 
 		//Preenchendo conjunto CPrimos.
 		for (int i = 0; i < 30; i++) {
@@ -56,20 +63,24 @@ public class FunPrinc {
 		}
 
 		//Imprimindo resultado.
-		System.out.println("--- Conjunto dos dez primeiros inteiros primos---");
+		System.out.println("----- Conjunto dos dez primeiros inteiros primos -----");
 		for (int i = 0; i < CPrimos.indice; i++) {
-			System.out.println(CPrimos.elementos[i]);
+			System.out.print(CPrimos.getElement(i) + " ");
 		}
 
+		System.out.println("\n");
 
+		System.out.println("----- Item A -----");
 		// A - Verificar se CPrimos é conjunto de sim mesmo.
 		if (CPrimos.checkSubset(CPrimos)) {
-			System.out.println("CPrimos é subconjunto de si memsmo.");
+			System.out.println("CPrimos é subconjunto de si mesmo.");
 
 		}else{
 			System.out.println("CPrimos não é conjunto de si mesmo.");
 		}
 
+
+		System.out.println("----- Item B -----");
 		// B - A pertinência dos conjuntos CPares, CImpares e CPrimos no conjunto CInteiros.
 		if (CPares.checkSubset(CInteiros)) {
 			System.out.println("CPares é subconjunto de CInteiros.");
@@ -93,6 +104,7 @@ public class FunPrinc {
 		}
 
 
+		System.out.println("----- Item C -----");
 		// C - União de CPares e CImpares é igual a CInteiros.
 		Conjunto ConjUni = CPares.union(CImpares);
 		boolean  aux = true; 
@@ -111,6 +123,8 @@ public class FunPrinc {
 
 		}
 
+
+		System.out.println("----- Item D -----");
 		// D - Intersecção dos conjuntos CInteiros e CPares é vazia.
 		Conjunto ConjInt = CInteiros.inter(CPares);
 
@@ -123,16 +137,19 @@ public class FunPrinc {
 		}
 
 
+		System.out.println("----- Item E -----");
 		// E - Diferença entre CInteiros e CPares.
 		Conjunto ConDif = CInteiros.dif(CPares);
 
-		System.out.println("Elementos do conjunto diferença de CInteiros e CPares");
+		System.out.println("----- Elementos do conjunto diferença de CInteiros e CPares ------");
 		for (int i = 0; i < ConDif.elementos.length; i++) {
-			System.out.println(ConDif.elementos[i]);
+			System.out.print(ConDif.getElement(i) + " ");
 		}
 
-		//Produto Cartesiano Teste1 x Teste2.
+		System.out.println("\n");
 
+
+		//Produto Cartesiano Teste1 x Teste2.
 		Conjunto teste1 = new Conjunto(4);
 		Conjunto teste2 = new Conjunto(2);
 
@@ -144,7 +161,7 @@ public class FunPrinc {
 		teste2.setElement(6);
 
 
-		System.out.println("=========Teste do Produto Cartesiano==========");
+		System.out.println("----- Teste do Produto Cartesiano -----");
 
 		Conjunto[] teste3 = new Conjunto[teste1.elementos.length*teste2.elementos.length];
 		teste3 = teste1.produtoCartesiano(teste2);
@@ -157,7 +174,9 @@ public class FunPrinc {
 			contador++;
 		}
 
+		System.out.println("\n");
 
+		System.out.println("----- Testando Lei de De Morgan -----");
 		//----------- Testando a Lei de De Morgan -----------
 
 		//Passo 01 - Guardar o valor de Complementar A U B:
@@ -216,18 +235,19 @@ public class FunPrinc {
 			System.out.println("Lei de De Morgan NÃO vale.");
 		}
 
+		System.out.println("\n");
 
 
+		System.out.println("----- Imprimindo o Conjunto potência -----");
+		//Testando Metódo do Conjunto potência
+		Conjunto p = new Conjunto(4);
 
-			Conjunto lero = new Conjunto(3);
+		for (int i = 0; i < 4; i++) {
+			p.setElement(i);
+		}
 
-			for(int i = 0; i < 3; i++) {
-				lero.setElement(i);			
-	
-			}
+		Conjunto Potencia = p.partes();
 
-
-			lero.printarPartes();
-
+		Potencia.imprimir();
 	}
 }
