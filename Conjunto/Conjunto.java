@@ -1,22 +1,27 @@
-//San Diego - 10/03/2018 - 21:26.
-//Classe Conjunto, representar u conjunto como uma classe Java.
-
+//Francisco San Diego de Sousa Castilho - Mtarícula: 397377 - Última modificação: 23/03/2018 15:30.
+//Todas as funções teve a participação dos membros: Francisco San Diego e Breno Araújo na sua eleboração.
+//A função de calculo do conjunto potência teve ajuda do Aluno Abner Lima.
+//A participação dos alunos San Diego e Breno Araújo variavam em Codificação e Baseamento teorico.  
 public class Conjunto{
 
+<<<<<<< HEAD:Conjunto/Conjunto.java
 	private int indice;
 	private int tamanho;
 	private Elementos[] elementos;
+=======
+	int indice;
+	Object[] elementos;
+>>>>>>> 491d8771dab6ea3402fc71352ddc6f233ff010c4:Conjunto.java
 
 	//Construtor da Classe Conjunto
 	public Conjunto(int tamanho){
 
-		this.tamanho = tamanho;
-		elementos = new int[tamanho];
+		elementos = new Object[tamanho];
 		indice = 0;
 	}
 
 	//Construtor de tamanho padrão.
-	public Conjunto(){
+	public Conjunto() {
 
 		this(10);
 	}
@@ -25,50 +30,91 @@ public class Conjunto{
 	public void setElement(int n){
 
 		//Verifica se existe espaço no conjunto e se nῶao tem elementos repetidos para inserir.
-		if (!checkExistence(n) && indice < tamanho){
+		if (!checkExistence(n) && indice < elementos.length){
 
 			elementos[indice] = n;
 			indice++;
 		}
 	}
 
-	//Retorna um valor específico
-	public int getElement(int i){
-		if (i > 0 && i < indice) {
-			return elementos[i]; 
+	public void setElement(float n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
 		}
 	}
 
-	//Função resposável por verificar a existência de um conjunto;
-	public boolean checkExistence(int n){
+	public void setElement(String n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+	}
+
+	public void setElement(double n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+	}
+
+	public void setElement(Object n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+
+	}
+	public void setElement(Conjunto n) {
+
+		if (!checkExistence(n) && indice < elementos.length){
+
+			elementos[indice] = n;
+			indice++;
+		}
+	}
+
+	public boolean checkExistence(Object n) {
+
 		//Verifica a existencia um elemento no Conjunto.
 		for (int i = 0; i < indice; i++) {
 				
-			if (n == getElement(i))
+			if (n.equals(getElement(i)))
 				return true;
 		}
-
 		return false;
 	}
 
-	//Função responsável por verificar se um conjunto é subconjunto de outro.
+	public Object getElement(int i){
+
+		if (i >= 0 && i < indice) 
+			return elementos[i];
+		else
+			return null;
+	}
+
 	public boolean checkSubset(Conjunto C){
 		//Verifica se para cada inteiro do primeiro conjunto o mesmo elemento
 		//pertence ao segundo conjunto e rretorna um valor correspondente.
 	
-
 		for (int i = 0; i < indice; i++) {
 
-			if (!C.checkExistence(getElement(i))){
+			if (!C.checkExistence(getElement(i)))
 				return false;
-			}
 		}
 
 		return true;
 	}
 
-	//Função responsável pela união de dois conjuntos.
-	public Conjunto union(Conjunto C){
+	public Conjunto union(Conjunto C) {
 
 		int aux = 0;
 
@@ -98,7 +144,7 @@ public class Conjunto{
 	public Conjunto inter(Conjunto C){
 		//Inicializa um vetor que guardará os valores comuns aos conjuntos.
 		//e uma variável que auxilia na contagem e armazenagem do tamanho dos conjuntos.
-		int[] NRepetidos = new int[C.indice];
+		Object[] NRepetidos = new Object[C.indice];
 		int aux = 0;
 
 		//Verifica quantos e quais os elementos comuns aos conjuntos.
@@ -114,7 +160,7 @@ public class Conjunto{
 		Conjunto ConjInter = new Conjunto(aux);
 
 		//Preenche o ConjInter com os valores comuns aos dois conjunntos.
-		for (int i = 0; i < ConjInter.tamanho; i++) {
+		for (int i = 0; i < ConjInter.elementos.length; i++) {
 
 			ConjInter.setElement(NRepetidos[i]);
 		}
@@ -131,19 +177,18 @@ public class Conjunto{
 		Conjunto ConjInter = inter(C);
 
 		//Instância do Conjunto diferença.
-		Conjunto ConjDif = new Conjunto(tamanho - ConjInter.tamanho);
+		Conjunto ConjDif = new Conjunto(elementos.length - ConjInter.elementos.length);
 
 		//Verifica se para cada elemento do conjunto atual está no conjunto intersecção.
 		for (int i = 0; i < indice; i++) {
-			for (int j = 0; j < ConjInter.tamanho; j++) {
+			for (int j = 0; j < ConjInter.elementos.length; j++) {
 			
 
-				if (elementos[i] == ConjInter.getElement(j)) {
-
+				if (elementos[i] == ConjInter.getElement(j))
 					aux = false;
 
 				}
-			}
+			
 
 			//Insere no conjunto da diferença aqueles elementos que não estão no conjunto da intersecção.
 			if (aux) {
@@ -154,5 +199,82 @@ public class Conjunto{
 		}
 
 		return ConjDif;
+	}
+
+
+	public Conjunto[] produtoCartesiano(Conjunto C2) {
+
+		int n = (this.elementos.length * C2.elementos.length);	//Número de pares ordenados do produto cartesiano.
+
+		Conjunto[] produto = new Conjunto[n];
+
+		int k = 0;
+
+		for(int i = 0; i < indice; i++) {
+			for (int j = 0; j < C2.indice; j++ ) {
+
+				produto[k] = new Conjunto(2);
+
+				produto[k].setElement(this.getElement(i));
+				produto[k].setElement(C2.getElement(j));
+				k++;
+			}			
+		}
+
+		return produto;
+	}
+
+	public void showSet() {
+
+		for(int i = 0; i<elementos.length; i++) {
+
+			System.out.println(elementos[i]);
+		}
+	}
+
+	public Conjunto partes() {
+		if (indice > 0) {
+			Conjunto CPartes = new Conjunto((int) Math.pow(2,indice));
+			CPartes.setElement(new Conjunto());
+
+			for (int i = 0; i < indice; i++) {
+				Conjunto CAux = new Conjunto(1);
+				CAux.setElement(this.elementos[i]);
+				partesAux(CAux, i, CPartes);
+			}
+			return CPartes;
+		}
+
+		return null;
+	}
+
+	private void partesAux(Conjunto C, int i, Conjunto P){
+		 	P.setElement(C);
+
+		for (int j = i + 1; j < indice; j++) {
+			Conjunto B = new Conjunto(1);
+			B.setElement(elementos[j]);
+			partesAux(C.union(B), j, P);
+		}
+	}
+
+
+	//Imprime o os elementos do conjunto das partes.
+	public void imprimir() {
+		Object[] Vetor = new Object[(int) Math.pow(2,indice)];
+
+		System.out.print("{ ");
+		for (int i = 0; i < this.indice; i++) {
+			Vetor[i] = this.getElement(i);
+
+			if (Vetor[i] instanceof Conjunto) {
+				Conjunto elemento = (Conjunto)Vetor[i];
+				elemento.imprimir();
+			} else {
+				System.out.print(Vetor[i] + ",");
+			}
+
+		}
+		System.out.println(" }");
 	}
 }
