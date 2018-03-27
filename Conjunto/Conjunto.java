@@ -5,7 +5,7 @@ public class Conjunto{
 
 	private int indice;
 	private int tamanho;
-	private int[] elementos;
+	private Elementos[] elementos;
 
 	//Construtor da Classe Conjunto
 	public Conjunto(int tamanho){
