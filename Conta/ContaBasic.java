@@ -17,15 +17,27 @@ public class ContaBasic extends Conta{
 		this.Id = Id;
 	}
 
+	//Responsável por adicionar credito a uma Conta.
 	public void creditar(double valor){
-		this.Saldo += valor;
+		if (valor > 0) { 	//Verifica a validade do valor-crédito.
+			this.Saldo += valor;
+		}
 	}
 
+	//Responsável por debitar um valor de uma Conta.
 	public void debitar(double valor){
-		this.Saldo -= valor; 
+		if (valor <= saldo()) {  //Verifica se o valor do débito cabe no saldo.
+			this.Saldo -= valor; 
+		}
 	}
 
 	public double saldo(){
 		return Saldo;
+	}
+
+	public toString(){
+		System.out.println("Tipo da Conta: XPTO Basic.");
+		System.out.println("Id da Conta: " + getId());
+		System.out.println("Saldo da Conta: " + saldo());
 	}
 }
