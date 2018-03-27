@@ -4,14 +4,8 @@
 //A participação dos alunos San Diego e Breno Araújo variavam em Codificação e Baseamento teorico.  
 public class Conjunto{
 
-<<<<<<< HEAD:Conjunto/Conjunto.java
-	private int indice;
-	private int tamanho;
-	private Elementos[] elementos;
-=======
 	int indice;
 	Object[] elementos;
->>>>>>> 491d8771dab6ea3402fc71352ddc6f233ff010c4:Conjunto.java
 
 	//Construtor da Classe Conjunto
 	public Conjunto(int tamanho){
