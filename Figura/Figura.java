@@ -1,11 +1,19 @@
-public abstract class Figura{
+abstract public class Figura {
 
-	//Desenha a figura na tela.
-	public abstract void desenha();
+	double dx;
+	double dy;
 
 	//Mover a figura da tela.
-	public abstract void mover(float dx, float dy);
+	public void mover(float dx, float dy) {
 
+		this.dx = this.dx + dx;
+		this.dy = this.dy + dy;
+
+	}
+	//Desenha a Figura na Tela.
+	abstract public void desenhar();
+
+	abstract public void desenhar(String cor);
 	//Calcula a área da figura.
-	public abstract double calculaArea();
+	abstract double calcularArea();
 }
