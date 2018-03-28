@@ -1,55 +1,47 @@
-public class Quadrado extends Figura{
+class Quadrado extends Figura implements FiguraColorida {
 
-	private double Dx;
-	private double Dy;
+	double lado;
+	String name = "Quadrado";
+	String cor;
+	String tipo;
 
+
+	Quadrado() {
+
+		this(1);
+	}
 	//Construtor da classe Quadrado.
-	Quadrado(double dx, double dy){
-		if (dx == dy) { //Verifica se os lados são iguais.
+	Quadrado(double lado) {
 
-			setDx(dx);
-			setDy(dy);
-		}
+			this.lado = lado;
+			dx = 0;
+			dx = 0;
+			tipo = "nao-colorida";
 	}
 
-	//Retorna o valor de Dx.
-	public double getDx(){
-		return this.Dx;
+	public String toString() {
+		return this.name;
 	}
 
-	//Armazena um valor em Dx.
-	public void setDx(double dx){
-		this.Dx = dx;
+	//Desenha a Figura na Tela.
+	public void desenhar() {
+
+		System.out.println(this.toString());
+
+		if(cor != null)
+			System.out.println("cor: "+cor);
 	}
 
-	//Retorna o valor  de Dy.
-	public double getDy(){
-		return this.Dy;
-	}
-
-	//Armazena um valor em Dy.
-	public void setDy(double dy){
-		this.Dy = dy;
-	}
-
-	public void desenha(){
-		System.out.println(toString());
-	}
-
-	public String toString(){
-		return "Quadrado";
-	}
-
-	//Move  quadrado de sua origem.
-	public void mover(float dx, float dy){
-		this.Dx += dx;
-		this.Dy += dy;
-	}
-
+	
 	//Calcula a área do quadrado;
-	public double calculaArea(){
-		double area = Dx * Dy;
+	public double calcularArea(){
 
+		double area = Math.pow(this.lado,2);
 		return area;
+	}
+
+	public String getTipo() {
+
+		return this.tipo;
 	}
 }
