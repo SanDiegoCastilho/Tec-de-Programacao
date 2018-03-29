@@ -1,3 +1,4 @@
+/* Implementado por : Breno Araújo de Lima. Mat: 398583 e Francisco San Diego de Sousa Castilho.  Mat: 397377.*/
 
 abstract public class Figura implements FiguraColorida {
 
