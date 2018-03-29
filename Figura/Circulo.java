@@ -3,8 +3,6 @@ class Circulo extends Figura {
 	final double PI = 3.14;
 	double raio;
 	String name = "Circulo";
-	String tipo = "nao-colorida";
-
 
 	Circulo() {
 		this(1);
@@ -13,15 +11,14 @@ class Circulo extends Figura {
 	Circulo(double raio) {
 
 		this.raio = raio;
-		dx = 0;
-		dy = 0;
+		temCor = false;
 	}
 
 	public String toString() {
 		return this.name;
 	}
 
-	public  void desenhar() {
+	public void desenhar() {
 		System.out.println(this.toString());
 	}
 
