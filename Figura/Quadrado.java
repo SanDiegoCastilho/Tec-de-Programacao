@@ -1,9 +1,7 @@
-class Quadrado extends Figura implements FiguraColorida {
+class Quadrado extends Figura {
 
-	double lado;
-	String name = "Quadrado";
-	String cor;
-	String tipo;
+	public double lado;
+	public String name = "Quadrado";
 
 
 	Quadrado() {
@@ -13,10 +11,9 @@ class Quadrado extends Figura implements FiguraColorida {
 	//Construtor da classe Quadrado.
 	Quadrado(double lado) {
 
+			super();
 			this.lado = lado;
-			dx = 0;
-			dx = 0;
-			tipo = "nao-colorida";
+			temCor = false;
 	}
 
 	public String toString() {
@@ -27,21 +24,14 @@ class Quadrado extends Figura implements FiguraColorida {
 	public void desenhar() {
 
 		System.out.println(this.toString());
-
-		if(cor != null)
+		if(temCor)
 			System.out.println("cor: "+cor);
-	}
 
-	
+	}
 	//Calcula a área do quadrado;
 	public double calcularArea(){
 
 		double area = Math.pow(this.lado,2);
 		return area;
-	}
-
-	public String getTipo() {
-
-		return this.tipo;
 	}
 }
