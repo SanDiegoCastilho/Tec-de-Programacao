@@ -2,7 +2,7 @@
 //Classe Classe Abstrata Figura - questão 01 Lista 03.
 //Última modificação 29/03/2018 - 23:00;
 
-public abstract class Figura{
+public abstract class Figura implements FiguraColorida{
 
 	protected double Px; //Valor de x (abcissa) do ponto de origem da figura.
 	protected double Py; //Valor de y (ordenada) do ponto de origem da figura.

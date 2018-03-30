@@ -4,11 +4,11 @@
 
 public class FunPrinc{
 	public static void main (String[] args){
-		Quadrado Q1 = new Quadrado(5, 5, 10);  //Instanciando o primeiro Quadrado.
-		Quadrado Q2 = new Quadrado(3, 2, 15);  //Instanciando o segunndo Quadrado.
+		Quadrado Q1 = new Quadrado(5, 5, 10, 0);  //Instanciando o primeiro Quadrado.
+		Quadrado Q2 = new Quadrado(3, 2, 15, 0);  //Instanciando o segunndo Quadrado.
 
-		Circulo C1 = new Circulo(6, 3 , 14);  //Instanciando o primeiro Círculo;
-		Circulo C2 = new Circulo(8, 4 , 11);  //Instanciando o segundo Círculo;
+		Circulo C1 = new Circulo(6, 3 , 14, 0);  //Instanciando o primeiro Círculo;
+		Circulo C2 = new Circulo(8, 4 , 11, 0);  //Instanciando o segundo Círculo;
 
 		//-----  TESTANDO AS CLASSES: Crculo e Quadrado -----
 		System.out.println("===== TESTANDO AS CLASSES: Circulo e Quadrado - Questão 03 =====");
@@ -36,5 +36,33 @@ public class FunPrinc{
 		System.out.println("===== Calculando a Área de cada figura =====");
 		System.out.println("Área de C2: " + C2.calculaArea());
 		System.out.println("Área de Q1: " + Q1.calculaArea());
+
+		System.out.println(" ... ");
+
+		System.out.println("===== TESTANDO FIGURAS COLORIDAS - QUSTÃO 05 =====");
+
+		//Vetor de figuras de tamanho 10.
+		Figura[] vetorFig = new Figura[10];
+
+		//Instanciando 5 quadrados e 5 círculos.
+		for (int i = 0; i < 10; i++) {
+			if (i < 5)
+				vetorFig[i] = new Quadrado(i, (i + 2), (i + 5), 0); //Cada quadrado terá cor = 0;
+
+			else
+				vetorFig[i] = new Circulo((i + 3), (i + 8), (i + 10), 0); //Cada circulo terá cor = 0;
+		}
+
+		//Pintando algumas figuras...
+		vetorFig[1].pinta(3);
+		vetorFig[3].pinta(100);
+		vetorFig[9].pinta(66);
+
+		//Imprimindo a área das figuras coloridas.
+		for (int i = 0; i < 10; i++) {
+			if (vetorFig[i].temCor()){
+				System.out.println("Área da Figura " + i + " = " + vetorFig[i].calculaArea());
+			}	
+		}
 	}
 }

@@ -2,7 +2,7 @@
 //Classe Círculo - questão 02b e 04b Lista 03.
 //Última modificação 29/03/2018 - 22:35. 
 
-public class Circulo extends Figura implements FiguraColorida{
+public class Circulo extends Figura{
 
 	private double Raio; //Raio da circunferência.
 	private int Cor;     //Representa a cor da figura caso ela seja colorida.

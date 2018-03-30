@@ -2,7 +2,7 @@
 //Classe Quadrado - questão 02a e 04a Lista 03.
 //Última modificação 29/03/2018 - 22:32. 
 
-public class Quadrado extends Figura implements FiguraColorida{
+public class Quadrado extends Figura{
 
 	private double Lado;  //Lado do quadrado.
 	private int Cor;      //Representa a cor da figura caso ela seja colorida.

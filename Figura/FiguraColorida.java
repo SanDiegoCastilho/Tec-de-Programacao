@@ -6,4 +6,7 @@ public interface FiguraColorida {
 
 	//'Pinta' uma figura com uma cor representada por um inteiro.
 	public void pinta(int cor);
+
+	//Verifica se a figura é colorida.
+	public boolean temCor();
 }
