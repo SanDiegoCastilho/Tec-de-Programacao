@@ -1,5 +1,5 @@
 //IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
-//Classe Classe Abstrata Figura - questão 01 Lista 02.
+//Classe Classe Abstrata Figura - questão 01 Lista 03.
 //Última modificação 29/03/2018 - 23:00;
 
 public abstract class Figura{

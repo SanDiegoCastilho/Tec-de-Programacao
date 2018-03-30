@@ -1,23 +1,38 @@
 //IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
-//Classe Quadrado - questão 02a Lista 02.
-//Última modificação 29/03/2018 - 22:32; 
+//Classe Quadrado - questão 02a e 04a Lista 03.
+//Última modificação 29/03/2018 - 22:32. 
 
-public class Quadrado extends Figura {
+public class Quadrado extends Figura implements FiguraColorida{
 
 	private double Lado;  //Lado do quadrado.
+	private int Cor;      //Representa a cor da figura caso ela seja colorida.
+						  //O valor 0 diz que a figura é do tipo Não Colorida.	
 
 	//Construtor padrão da classe Quadrado.
-	public Quadrado(double px, double py, double lado) {
+	public Quadrado(double px, double py, double lado, int cor) {
 		setPx(px);    //Armazena o valor inicial de px.
 		setPy(py);	  //Armazena o valor inicial de py.
 		setLado(lado);//Armazena o valor inicnial de Lado.
-
-		// temCor = false;
+		pinta(cor);   //"Pinta" a figura com a cor dada.
 	}
 
 	//Construtor Vazio da classe Quadrado.
 	public Quadrado() {
-		this(0, 0, 1);
+		this(0, 0, 1, 0);
+	}
+
+	//"Pinta" a figura com a cor dada.
+	public void pinta(int cor){
+		this.Cor = cor;
+	}
+
+	//Verifica se a figura é colorida.
+	public boolean temCor(){
+		if (this.Cor != 0)
+			return true;   //Figura colorida.
+		
+		else
+			return false;  //Figura não colorida.
 	}
 
 	//Armazena um valor para Lado.

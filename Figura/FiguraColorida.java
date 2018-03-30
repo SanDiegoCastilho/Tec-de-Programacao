@@ -1,6 +1,9 @@
-/* Implementado por : Breno Araújo de Lima. Mat: 398583 e Francisco San Diego de Sousa Castilho.  Mat: 397377.*/
+//IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
+//Interface Figura Colorida - questão 04 Lista 03.
+//Última modificação 30/03/2018 - 11:51;
 
 public interface FiguraColorida {
 
-	public void desenhar(String cor);
+	//'Pinta' uma figura com uma cor representada por um inteiro.
+	public void pinta(int cor);
 }

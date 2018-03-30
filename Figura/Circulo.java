@@ -1,21 +1,38 @@
 //IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
-//Classe Círculo - questão 02b Lista 02.
-//Última modificação 29/03/2018 - 22:35; 
+//Classe Círculo - questão 02b e 04b Lista 03.
+//Última modificação 29/03/2018 - 22:35. 
 
-public class Circulo extends Figura{
+public class Circulo extends Figura implements FiguraColorida{
 
 	private double Raio; //Raio da circunferência.
+	private int Cor;     //Representa a cor da figura caso ela seja colorida.
+						 //O valor 0 diz que a figura é do tipo Não Colorida.
 
 	//Construtor padrão
-	public Circulo(double px, double py, double raio){
+	public Circulo(double px, double py, double raio, int cor){
 		setPx(px);     //Armazena o valor inicial de px.
 		setPy(py); 	   //Armazena o valor inicial de py.
 		setRaio(raio); //Armazena o valor do Raio.
+		pinta(cor);    //"Pinta" a figura com a cor dada.
 	}
 
 	//Construtor vazio.
 	public Circulo(){
-		this(0, 0, 1); //Cículo começa na origem e tem Raio = 1.
+		this(0, 0, 1, 0); //Cículo começa na origem e tem Raio = 1.
+	}
+
+	//"Pinta" a figura com a cor dada.
+	public void pinta(int cor){
+		this.Cor = cor;
+	}
+
+	//Verifica se a figura é colorida.
+	public boolean temCor(){
+		if (this.Cor != 0)
+			return true;   //Figura colorida.
+		
+		else
+			return false;  //Figura não colorida.
 	}
 
 	//Armazena o valor do raio enviado pelo usuário.
