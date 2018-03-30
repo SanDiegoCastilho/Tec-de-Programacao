@@ -1,55 +1,39 @@
-public class Quadrado extends Figura{
+/* Implementado por : Breno Araújo de Lima. Mat: 398583 e Francisco San Diego de Sousa Castilho.  Mat: 397377.*/
 
-	private double Dx;
-	private double Dy;
+class Quadrado extends Figura {
 
+	public double lado;
+	public String name = "Quadrado";
+
+
+	Quadrado() {
+
+		this(1);
+	}
 	//Construtor da classe Quadrado.
-	Quadrado(double dx, double dy){
-		if (dx == dy) { //Verifica se os lados são iguais.
+	Quadrado(double lado) {
 
-			setDx(dx);
-			setDy(dy);
-		}
+			super();
+			this.lado = lado;
+			temCor = false;
 	}
 
-	//Retorna o valor de Dx.
-	public double getDx(){
-		return this.Dx;
+	public String toString() {
+		return this.name;
 	}
 
-	//Armazena um valor em Dx.
-	public void setDx(double dx){
-		this.Dx = dx;
-	}
+	//Desenha a Figura na Tela.
+	public void desenhar() {
 
-	//Retorna o valor  de Dy.
-	public double getDy(){
-		return this.Dy;
-	}
+		System.out.println(this.toString());
+		if(temCor)
+			System.out.println("cor: "+cor);
 
-	//Armazena um valor em Dy.
-	public void setDy(double dy){
-		this.Dy = dy;
 	}
-
-	public void desenha(){
-		System.out.println(toString());
-	}
-
-	public String toString(){
-		return "Quadrado";
-	}
-
-	//Move  quadrado de sua origem.
-	public void mover(float dx, float dy){
-		this.Dx += dx;
-		this.Dy += dy;
-	}
-
 	//Calcula a área do quadrado;
-	public double calculaArea(){
-		double area = Dx * Dy;
+	public double calcularArea(){
 
+		double area = Math.pow(this.lado,2);
 		return area;
 	}
 }
