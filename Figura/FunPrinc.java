@@ -21,10 +21,16 @@ public class FunPrinc{
 		System.out.println("===== Movendo C1 10 unidades no eixo das abcissas e 5 no eixo das ordenadas =====");
 
 		C1.mover(10, 5);
-		System.out.println("Ponto de Origem C1: (" + C1.getPx() + ", " + C1.getPy() + ")" + " Raio: " + C1.getRaio());
+		System.out.println("Novo ponto de Origem C1: (" + C1.getPx() + ", " + C1.getPy() + ")" + " Raio: " + C1.getRaio());
 
+		System.out.println("===== Desenhando as figuras =====");
+		System.out.print("C1 é "); C1.desenha();
+		System.out.print("Q2 é "); Q2.desenha();
 
+		System.out.println(" ... ");
 
-
+		System.out.println("===== Calculando a Área de cada figura =====");
+		System.out.println("Área de C2: " + C2.calculaArea());
+		System.out.println("Área de Q1: " + Q1.calculaArea());
 	}
 }
