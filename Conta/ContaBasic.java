@@ -1,25 +1,33 @@
+//Francisco San Diego de Sousa Castilho  - Mát: 397377.
+//Classe Conta Basic - Questão 01a Lista 04.
+//Última modificação 30/03/2018 - 12:53.
+
 public class ContaBasic extends Conta{
 	
+	//Contrutor padrão da Classe ContaBasic.
 	public ContaBasic(String Id, double valor){
 		setId(Id);
-		setSaldo(valor);
+		creditar(valor);
 	}
 
+	//Contrutor de Saldo vazio.
 	public ContaBasic(String Id){
 		this(Id, 0);
 	}
-
-	public String getId(){
-		return Id;
-	}
-
+	
+	//Armazena o valor de Id
 	public void setId(String Id){
 		this.Id = Id;
 	}
 
+	//Retorna o Id da Conta
+	public String getId(){
+		return Id;
+	}
+
 	//Responsável por adicionar credito a uma Conta.
 	public void creditar(double valor){
-		if (valor > 0) { 	//Verifica a validade do valor-crédito.
+		if (valor >= 0) { 	//Verifica a validade do valor-crédito.
 			this.Saldo += valor;
 		}
 	}
@@ -35,9 +43,12 @@ public class ContaBasic extends Conta{
 		return Saldo;
 	}
 
-	public toString(){
-		System.out.println("Tipo da Conta: XPTO Basic.");
-		System.out.println("Id da Conta: " + getId());
-		System.out.println("Saldo da Conta: " + saldo());
+	public String toString(){
+		
+		String Info = "Conta XPTO Basic. " + 
+					  "Id: " + getId() +
+					  "Saldo: " + saldo() + "";
+
+		return Info;
 	}
 }
