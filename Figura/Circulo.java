@@ -15,6 +15,11 @@ public class Circulo extends Figura{
 		setRaio(raio);
 	}
 
+	//Construtor vazio.
+	public Circulo(){
+		this.Circulo(0, 0, 1); //Cículo começa na origem e tem Raio = 1.
+	}
+
 	//Armazena o valor do raio enviado pelo usuário.
 	public void setRaio(double raio){
 		if(raio > 0){
