@@ -1,6 +1,6 @@
 //Francisco San Diego de Sousa Castilho  - Mát: 397377.
 //Classe Conta Basic - Questão 01a Lista 04.
-//Última modificação 30/03/2018 - 12:53.
+//Última modificação 30/03/2018 - 15:44.
 
 public class ContaBasic extends Conta{
 	
@@ -39,15 +39,17 @@ public class ContaBasic extends Conta{
 		}
 	}
 
+	//Retorna o valor do Saldo da conta.
 	public double saldo(){
 		return Saldo;
 	}
 
+	//Imprime o Tipo, Id e o Saldo da conta.
 	public String toString(){
 		
-		String Info = "Conta XPTO Basic. " + 
-					  "Id: " + getId() +
-					  "Saldo: " + saldo() + "";
+		String Info = "Conta XPTO Basic." + 
+					  " Id: " + getId() +
+					  " Saldo: " + saldo() + "";
 
 		return Info;
 	}

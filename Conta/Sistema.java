@@ -1,3 +1,7 @@
+//Francisco San Diego de Sousa Castilho  - Mát: 397377.
+//Classe Sistema - Questão 03 Lista 04.
+//Última modificação 30/03/2018 - 15:42.
+
 public class Sistema{
 
 	Conta[] vetorContas; //Vetor de Contas.
@@ -51,4 +55,13 @@ public class Sistema{
 	public double consultarSaldo(int pos){
 		return vetorContas[pos].saldo();  //Retorna o valor do saldo da posição pos.
 	}
+
+	//Retorna o Tipo, Id e Saldo da Conta na posição informada.
+	public String info(int pos){
+		if (pos >= 0 && pos < vetorContas.length)
+			return vetorContas[pos].toString();
+
+		else
+			return null;
+	} 
 }

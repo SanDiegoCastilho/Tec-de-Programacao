@@ -48,8 +48,8 @@ public class ContaExtreme extends Conta{
 	public String toString(){
 		
 		String Info = "Conta XPTO Extreme. " + 
-					  "Id: " + getId() +
-					  "Saldo: R$ " + saldo() + "";
+					  " Id: " + getId() +
+					  " Saldo: R$ " + saldo() + " ";
 
 		return Info;
 	}	

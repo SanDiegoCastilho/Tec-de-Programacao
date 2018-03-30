@@ -48,8 +48,8 @@ public class ContaPlus extends Conta{
 	public String toString(){
 		
 		String Info = "Conta XPTO Plus. " + 
-					  "Id: " + getId() +
-					  "Saldo: R$ " + saldo() + "";
+					  " Id: " + getId() +
+					  " Saldo: R$ " + saldo() + " ";
 
 		return Info;
 	}
