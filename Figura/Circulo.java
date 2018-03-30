@@ -1,6 +1,6 @@
 //IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
 //Classe Círculo - questão 02b e 04b Lista 03.
-//Última modificação 29/03/2018 - 22:35. 
+//Última modificação 30/03/2018 - 12:35. 
 
 public class Circulo extends Figura{
 

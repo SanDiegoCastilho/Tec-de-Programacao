@@ -1,6 +1,6 @@
 //IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
 //Classe Classe Abstrata Figura - questão 01 Lista 03.
-//Última modificação 29/03/2018 - 23:00;
+//Última modificação 30/03/2018 - 12:31;
 
 public abstract class Figura implements FiguraColorida{
 
