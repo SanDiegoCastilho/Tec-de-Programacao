@@ -5,23 +5,23 @@
 public class ContaPlus extends Conta{
 
 	//Contrutor padrão da Classe ContaExtreme.
-	public ContaPlus(String Id, double valor){
+	public ContaPlus(int  Id, double valor){
 		setId(Id);
 		creditar(valor);
 	}
 
 	//Contrutor de Saldo vazio.
-	public ContaPlus(String Id){
+	public ContaPlus(int Id){
 		this(Id, 0);
 	}
 	
 	//Armazena o valor de Id
-	public void setId(String Id){
+	public void setId(int Id){
 		this.Id = Id;
 	}
 
 	//Retorna o Id da Conta
-	public String getId(){
+	public int getId(){
 		return Id;
 	}
 

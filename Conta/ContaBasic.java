@@ -5,23 +5,23 @@
 public class ContaBasic extends Conta{
 	
 	//Contrutor padrão da Classe ContaBasic.
-	public ContaBasic(String Id, double valor){
+	public ContaBasic(int Id, double valor){
 		setId(Id);
 		creditar(valor);
 	}
 
 	//Contrutor de Saldo vazio.
-	public ContaBasic(String Id){
+	public ContaBasic(int Id){
 		this(Id, 0);
 	}
 	
 	//Armazena o valor de Id
-	public void setId(String Id){
+	public void setId(int Id){
 		this.Id = Id;
 	}
 
 	//Retorna o Id da Conta
-	public String getId(){
+	public int getId(){
 		return Id;
 	}
 

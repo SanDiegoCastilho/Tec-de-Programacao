@@ -4,17 +4,17 @@
 
 public abstract class Conta{
 
-	protected String Id;    //Identificador da conta.
+	protected int Id;    //Identificador da conta.
 	protected double Saldo; //Representa o saldo da conta.
 
 
-	abstract public void setId(String id); //Guarda o Id da Conta.
+	public abstract void setId(int id); //Guarda o Id da Conta.
 
-	abstract public String getId();  //Retorna o Id da Conta.
+	public abstract int getId();  //Retorna o Id da Conta.
 
-	abstract public void creditar(double valor); //Responsável por adicionar crédito a uma conta.
+	public abstract void creditar(double valor); //Responsável por adicionar crédito a uma conta.
 
-	abstract public void debitar(double valor); //Responsável por debitar valor de uma conta.
+	public abstract void debitar(double valor); //Responsável por debitar valor de uma conta.
 
-	abstract public double saldo(); //Responsável retornar o valor do saldo de uma conta.
+	public abstract double saldo(); //Responsável retornar o valor do saldo de uma conta.
 }
