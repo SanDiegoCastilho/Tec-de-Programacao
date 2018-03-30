@@ -3,14 +3,15 @@
 //Última modificação 30/03/2018 - 13:28.
 
 public class ContaPlus extends Conta{
+
 	//Contrutor padrão da Classe ContaExtreme.
-	public ContaExtreme(String Id, double valor){
+	public ContaPlus(String Id, double valor){
 		setId(Id);
 		creditar(valor);
 	}
 
 	//Contrutor de Saldo vazio.
-	public ContaExtreme(String Id){
+	public ContaPlus(String Id){
 		this(Id, 0);
 	}
 	
@@ -27,7 +28,7 @@ public class ContaPlus extends Conta{
 	//Responsável por adicionar credito a uma Conta.
 	public void creditar(double valor){
 		if (valor >= 0) { 	//Verifica a validade do valor-crédito.
-			this.Saldo += (valor + (valor * 0.005); //Rendendo 0.2%.
+			this.Saldo += (valor + (valor * 0.005)); //Rendendo 0.5%.
 		}
 	}
 
