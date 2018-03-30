@@ -47,7 +47,7 @@ public class ContaExtreme extends Conta{
 	//Retonar o Tipo, Id e Saldo da conta.
 	public String toString(){
 		
-		String Info = "Conta XPTO Basic. " + 
+		String Info = "Conta XPTO Extreme. " + 
 					  "Id: " + getId() +
 					  "Saldo: R$ " + saldo() + "";
 
