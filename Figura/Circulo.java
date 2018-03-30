@@ -8,13 +8,14 @@ public class Circulo extends Figura{
 
 	//Construtor padrão
 	public Circulo(double px, double py, double raio){
-		super(px, py);  //Conrutor da classe abstrata.
+		setPx(px);     //Armazena o valor inicial de px.
+		setPy(py); 	   //Armazena o valor inicial de py.
 		setRaio(raio); //Armazena o valor do Raio.
 	}
 
 	//Construtor vazio.
 	public Circulo(){
-		this.Circulo(0, 0, 1); //Cículo começa na origem e tem Raio = 1.
+		this(0, 0, 1); //Cículo começa na origem e tem Raio = 1.
 	}
 
 	//Armazena o valor do raio enviado pelo usuário.
@@ -34,9 +35,19 @@ public class Circulo extends Figura{
 		this.Px = px;
 	}
 
+	//Retorna o valor de Px.
+	public double getPx(){
+		return Px;
+	}
+
 	//Armazena um valor a Py.
 	public void setPy(double py){
 		this.Py = py;
+	}
+
+	//Retorna o valor de Py.
+	public double getPy(){
+		return Py;
 	}
 
 	//Chama a função que "desenha" a figura.
@@ -49,12 +60,10 @@ public class Circulo extends Figura{
 		return "Círculo";
 	}
 
-	//Método responsável por mover a figura, no caso só é necessário
-	//mover seu ponto de origem (px,py) que também é um dos pontos de
-	//origem do raio.
-	public void mover(double px, double py){
-		setPx(px);
-		setPy(py);
+	//Método responsável por mover a Figura no plano.
+	public void mover(float dx, float dy){
+		setPx(getPx() + dx);  //Move no eixo das abcissas.
+		setPy(getPy() + dy);  //Move no eixo das ordenadas.
 	}
 
 	//Método responsável por calcular a área dó círculo.

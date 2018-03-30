@@ -1,35 +1,27 @@
-/* Implementado por : Breno Araújo de Lima. Mat: 398583 e Francisco San Diego de Sousa Castilho.  Mat: 397377.*/
+//IMPLEMENTADO POR BRENO ARAÚJO DE LIMA - Mat:398583 E FRANCISCO SAN DIEGO DE SOUSA CASTILHO Mat:397377.
+//Classe Classe Abstrata Figura - questão 01 Lista 02.
+//Última modificação 29/03/2018 - 23:00;
 
-abstract public class Figura implements FiguraColorida {
+public abstract class Figura{
 
-	double dx;	// Coordenada eixo X
-	double dy;	//Coordenada eixo y.
-	String cor;
-	boolean temCor;
+	protected double Px; //Valor de x (abcissa) do ponto de origem da figura.
+	protected double Py; //Valor de y (ordenada) do ponto de origem da figura.
 
-	Figura() {
+	// String cor;
+	// boolean temCor;
 
-		this.dx = 0;
-		this.dy = 0;
-	}
+	//Método responsável por mover a figura na tela.
+	public abstract void mover(float dx, float dy);
 
-	//Mover a figura da tela.
-	public void mover(double dx, double dy) {
+	//Método resonśavel por "desenhar" a Figura na Tela.
+	public abstract void desenha();
 
-		this.dx = this.dx + dx;
-		this.dy = this.dy + dy;
-
-	}
-	//Desenha a Figura na Tela.
-	abstract public void desenhar();
-
-	//Seta a cor da figura;
-	public void desenhar(String cor) {
-		this.cor = cor;
-		this.temCor = true;
-	}
+	// //Seta a cor da figura;
+	// public void desenhar(String cor) {
+	// 	this.cor = cor;
+	// 	this.temCor = true;
+	// }
 	
-
 	//Calcula a área da figura.
-	abstract double calcularArea();
+	abstract double calculaArea();
 }
