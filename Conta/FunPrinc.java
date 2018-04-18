@@ -2,6 +2,8 @@
 //Classe FunPrinc (main) - Questão 04 Lista 04.
 //Última modificação 30/03/2018 - 15:45.
 
+//Ao definirmos o comportammento dos métodos da ccclasse abstrata Conta estamos utilizando o polimorfismo do tipo INCLUSÃO.
+
 public class FunPrinc{
 	public static void main (String[] args){
 			

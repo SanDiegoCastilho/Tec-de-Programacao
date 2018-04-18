@@ -7,7 +7,7 @@ public abstract class Conta{
 	protected int Id;    //Identificador da conta.
 	protected double Saldo; //Representa o saldo da conta.
 
-
+	
 	public abstract void setId(int id); //Guarda o Id da Conta.
 
 	public abstract int getId();  //Retorna o Id da Conta.

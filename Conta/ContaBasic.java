@@ -44,6 +44,7 @@ public class ContaBasic extends Conta{
 		return Saldo;
 	}
 
+	//Sobrecarga do método toSring da classe object.
 	//Imprime o Tipo, Id e o Saldo da conta.
 	public String toString(){
 		

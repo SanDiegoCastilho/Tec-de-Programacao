@@ -44,6 +44,7 @@ public class ContaExtreme extends Conta{
 		return Saldo;
 	}
 
+	//Sobrecarga do método toSring da classe object.
 	//Retonar o Tipo, Id e Saldo da conta.
 	public String toString(){
 		
